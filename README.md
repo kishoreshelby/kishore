@@ -1,45 +1,3 @@
-# XOR Gate Prediction using Artificial Neural Network
-
-This project demonstrates how a simple artificial neural network can learn the XOR logic function using PyTorch.
-
-The XOR gate is a classic example in machine learning because it is not linearly separable. A single perceptron cannot solve it, but a neural network with at least one hidden layer can.
-
-## Project Objective
-
-Train a neural network to predict the XOR output for the following inputs:
-
-- [0, 0] -> 0
-- [0, 1] -> 1
-- [1, 0] -> 1
-- [1, 1] -> 0
-
-## Requirements
-
-- Python 3.x
-- PyTorch
-
-Install dependencies:
-
-```bash
-pip install torch
-```
-
-## Project Files
-
-- `xor_ann.py` contains the complete PyTorch implementation.
-
-## Model Overview
-
-The neural network includes:
-- Input layer with 2 neurons
-- Hidden layer with multiple neurons
-- Output layer with 1 neuron
-- Activation function: GELU / ReLU / Sigmoid
-- Loss function: Mean Squared Error (MSE)
-
-## Code
-
-```python
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -95,28 +53,3 @@ with torch.no_grad():
     print(model(X))
     print("Rounded outputs:")
     print(torch.round(model(X)).numpy())
-```
-
-## Expected Output
-
-After training, the model should predict approximately:
-
-- [0, 0] -> 0
-- [0, 1] -> 1
-- [1, 0] -> 1
-- [1, 1] -> 0
-
-## Why XOR Is Important
-
-The XOR problem is a foundational example in neural networks because it shows:
-- why non-linear activation functions matter
-- why hidden layers are necessary
-- how backpropagation helps a network learn complex patterns
-
-## Notes
-
-This project is intended as a beginner-friendly introduction to neural networks and deep learning. It is a simple but effective example of how a model learns logical patterns from data.
-
-## License
-
-This project is provided for educational purposes.
